@@ -30,9 +30,8 @@ public class Email {
         this.password = generatePassword(DEFAULT_PASSWORD_LENGTH);
         //System.out.println("Password : " + this.password) ;
 
-        // construct email combining first-name and last-name
-        // @ department-name.company.com
-        this.email = this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@" + this.department.toLowerCase() + "." + COMPANY_SUFFIX;
+        // construct email and set
+        this.email = generateEmail();
         //System.out.println("Email : " + this.email);
     }
 
@@ -64,6 +63,15 @@ public class Email {
             password[i] = passwordSet.charAt(random);
         }
         return new String(password);    // Create new String() as password type is array of char.
+    }
+
+    // Construct email having first-name and last-name
+    private String generateEmail() {
+        if (this.department.isEmpty()) {
+            return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@" + COMPANY_SUFFIX;
+        } else {
+            return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@" + this.department.toLowerCase() + "." + COMPANY_SUFFIX;
+        }
     }
 
     // change password
