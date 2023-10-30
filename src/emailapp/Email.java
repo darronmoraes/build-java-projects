@@ -9,7 +9,7 @@ public class Email {
     private String password;
     private String department;
     private String alternateEmail;
-    private int mailBoxCapacity;
+    private int mailBoxCapacity = 500;
     private String email;
 
     // Static variables
@@ -67,10 +67,19 @@ public class Email {
     }
 
     // change password
+    public void changePassword(String password) {
+        this.password = password;
+    }
 
     // set mailbox capacity
+    public void setMailBoxCapacity(int capacity) {
+        this.mailBoxCapacity = capacity;
+    }
 
     // set alternate email address
+    public void setAlternateEmail(String email) {
+        this.alternateEmail = email;
+    }
 
 
 }
