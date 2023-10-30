@@ -89,4 +89,11 @@ public class Email {
 
     // Get password
     public String getPassword() {return this.password;}
+
+    // function to display name, email and mail-box capacity
+    public void display() {
+        System.out.println("NAME : " + this.firstName + " " + this.lastName);
+        System.out.println("EMAIL : " + this.email);
+        System.out.println("MAIL-BOX CAPACITY : " + this.mailBoxCapacity);
+    }
 }

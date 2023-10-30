@@ -7,5 +7,6 @@ public class EmailApp {
 
         email.setAlternateEmail("darron@numinolabs.com");
         System.out.println("Alternate email : " + email.getAlternateEmail());
+        email.display();
     }
 }
