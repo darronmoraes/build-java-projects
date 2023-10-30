@@ -20,20 +20,20 @@ public class Email {
     public Email(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Email : " + this.firstName + this.lastName);
+        //System.out.println("Email : " + this.firstName + this.lastName);
 
         // set department
         this.department = setDepartment();
-        System.out.println("Department : " + this.department) ;
+        //System.out.println("Department : " + this.department) ;
 
         // set random password
         this.password = generatePassword(DEFAULT_PASSWORD_LENGTH);
-        System.out.println("Password : " + this.password) ;
+        //System.out.println("Password : " + this.password) ;
 
         // construct email combining first-name and last-name
         // @ department-name.company.com
         this.email = this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@" + this.department.toLowerCase() + "." + COMPANY_SUFFIX;
-        System.out.println("Email : " + this.email);
+        //System.out.println("Email : " + this.email);
     }
 
     // Ask for the department
@@ -81,5 +81,12 @@ public class Email {
         this.alternateEmail = email;
     }
 
+    // Get mailbox capacity
+    public int getMailBoxCapacity() {return this.mailBoxCapacity;}
 
+    // Get alternate address
+    public String getAlternateEmail() {return this.alternateEmail;}
+
+    // Get password
+    public String getPassword() {return this.password;}
 }
